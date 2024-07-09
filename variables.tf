@@ -11,3 +11,4 @@ variable "vlan_desc" {}
 variable "range_desc" {}
 variable "cidr" {}
 variable "network_range" {}
+variable "private_key" {}

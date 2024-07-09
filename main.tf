@@ -78,7 +78,7 @@ resource "null_resource" "cisco" {
     connection {
       type           = "ssh"
       user           = "root"
-      private_key    = file("~/.ssh/id_ed25519")
+      private_key    = var.private_key
       host           = data.equinix_metal_device.instance.access_public_ipv4
     }
     
