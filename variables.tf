@@ -1,6 +1,3 @@
-variable "metro_code" {}
-variable "sec_metro_code" {}
-variable "username" {}
 variable "metro" {}
 variable "vrf_desc" {}
 variable "vrf_name" {}
