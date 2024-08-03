@@ -3,7 +3,7 @@ terraform {
     equinix = {
       source = "equinix/equinix"
     }
-    iosxe    = {
+    iosxe = {
       source = "CiscoDevNet/iosxe"
     }
   }
