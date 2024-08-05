@@ -1,3 +1,4 @@
+# setup for metal environment
 resource "equinix_metal_vrf" "myvrf" {
   description = var.vrf_desc
   name        = var.vrf_name
@@ -6,8 +7,6 @@ resource "equinix_metal_vrf" "myvrf" {
   ip_ranges   = var.vrf_ranges
   project_id  = var.project_id
 }
-
-# Create Metal Gateway for a VLAN with a private IPv4 block with 8 IP addresses
 
 resource "equinix_metal_vlan" "myvlan" {
   description = var.vlan_desc
@@ -31,17 +30,6 @@ resource "equinix_metal_gateway" "mygateway" {
   ip_reservation_id = equinix_metal_reserved_ip_block.myrange.id
 }
 
-# provider "iosxe" {
-#   username = var.username
-#   password = module.ne.pass
-#   url      = "https://${module.ne.ssh_ip_vd}"
-# }
 
-# resource "iosxe_cli" "example" {
-#   cli = <<-EOT
-#   interface Lo0
-#   desc testing
-#   EOT
-# }
 
 
