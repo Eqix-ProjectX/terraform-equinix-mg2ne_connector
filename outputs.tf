@@ -10,3 +10,6 @@ output "network_range" {
 output "vrf_asn" {
   value = equinix_metal_vrf.myvrf.local_asn
 }
+output "vlan" {
+  value = equinix_metal_vlan.myvlan.id
+}
