@@ -1,10 +1,10 @@
 # setup for metal environment
 resource "equinix_metal_vrf" "myvrf_pri" {
-  description = var.vrf_desc
-  name        = var.vrf_name
+  description = var.vrf_desc_pri
+  name        = var.vrf_name_pri
   metro       = var.metro
   local_asn   = var.vrf_asn
-  ip_ranges   = var.vrf_ranges
+  ip_ranges   = var.vrf_ranges_pri
   project_id  = var.project_id
 }
 
@@ -18,7 +18,7 @@ resource "equinix_metal_vrf" "myvrf_sec" {
 }
 
 resource "equinix_metal_vlan" "myvlan_pri" {
-  description = var.vlan_desc
+  description = var.vlan_desc_pri
   metro       = var.metro
   project_id  = var.project_id
 }
