@@ -5,10 +5,13 @@ output "vrf_ranges_sec" {
   value = equinix_metal_vrf.myvrf_sec.ip_ranges
 }
 output "cidr" {
-  value = equinix_metal_reserved_ip_block.myrange.cidr
+  value = equinix_metal_reserved_ip_block.myrange_pri.cidr
 }
-output "network_range" {
-  value = equinix_metal_reserved_ip_block.myrange.network
+output "network_range_pri" {
+  value = equinix_metal_reserved_ip_block.myrange_pri.network
+}
+output "network_range_sec" {
+  value = equinix_metal_reserved_ip_block.myrange_sec.network
 }
 output "vrf_asn" {
   value = equinix_metal_vrf.myvrf_pri.local_asn

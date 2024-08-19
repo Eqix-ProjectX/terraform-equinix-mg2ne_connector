@@ -29,36 +29,36 @@ resource "equinix_metal_vlan" "myvlan_sec" {
   project_id  = var.project_id
 }
 
-resource "equinix_metal_reserved_ip_block" "myrange" {
-  description = var.range_desc
+resource "equinix_metal_reserved_ip_block" "myrange_pri" {
+  description = var.range_desc_pri
   project_id  = var.project_id
   metro       = var.metro
   type        = "vrf"
   vrf_id      = equinix_metal_vrf.myvrf_pri.id
   cidr        = var.cidr
-  network     = var.network_range
+  network     = var.network_range_pri
 }
 
-# resource "equinix_metal_reserved_ip_block" "myrange_sec" {
-#   description = var.range_desc_sec
-#   project_id  = var.project_id
-#   metro       = var.metro
-#   type        = "vrf"
-#   vrf_id      = equinix_metal_vrf.myvrf_sec.id
-#   cidr        = var.cidr
-#   network     = var.network_range
-# }
+resource "equinix_metal_reserved_ip_block" "myrange_sec" {
+  description = var.range_desc_sec
+  project_id  = var.project_id
+  metro       = var.metro
+  type        = "vrf"
+  vrf_id      = equinix_metal_vrf.myvrf_sec.id
+  cidr        = var.cidr
+  network     = var.network_range_sec
+}
 
 resource "equinix_metal_gateway" "mygateway_pri" {
   project_id        = var.project_id
   vlan_id           = equinix_metal_vlan.myvlan_pri.id
-  ip_reservation_id = equinix_metal_reserved_ip_block.myrange.id
+  ip_reservation_id = equinix_metal_reserved_ip_block.myrange_pri.id
 }
 
 resource "equinix_metal_gateway" "mygateway_sec" {
   project_id        = var.project_id
   vlan_id           = equinix_metal_vlan.myvlan_sec.id
-  ip_reservation_id = equinix_metal_reserved_ip_block.myrange.id
+  ip_reservation_id = equinix_metal_reserved_ip_block.myrange_sec.id
 }
 
 

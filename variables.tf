@@ -9,7 +9,8 @@ variable "vrf_ranges_sec" {}
 variable "project_id" {}
 variable "vlan_desc" {}
 variable "vlan_desc_sec" {}
-variable "range_desc" {}
+variable "range_desc_pri" {}
 variable "range_desc_sec" {}
 variable "cidr" {}
-variable "network_range" {}
+variable "network_range_pri" {}
+variable "network_range_sec" {}
