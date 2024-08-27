@@ -14,3 +14,5 @@ variable "range_desc_sec" {}
 variable "cidr" {}
 variable "network_range_pri" {}
 variable "network_range_sec" {}
+variable "connection_name" {}
+variable "email" {}

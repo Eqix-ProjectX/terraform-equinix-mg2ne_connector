@@ -13,6 +13,12 @@ output "network_range_pri" {
 output "network_range_sec" {
   value = equinix_metal_reserved_ip_block.myrange_sec.network
 }
+output "vrf_pri" {
+  value = equinix_metal_vrf.myvrf_pri.id
+}
+output "vrf_sec" {
+  value = equinix_metal_vrf.myvrf_sec.id
+}
 output "vrf_asn" {
   value = equinix_metal_vrf.myvrf_pri.local_asn
 }
@@ -21,4 +27,13 @@ output "vlan" {
 }
 output "vlan_sec" {
   value = equinix_metal_vlan.myvlan_sec.vxlan
+}
+output "connection_name" {
+  value = equinix_metal_connection.mg2vd.name
+}
+output "port_pri" {
+  value = equinix_metal_connection.mg2vd.ports[0].id
+}
+output "port_sec" {
+  value = equinix_metal_connection.mg2vd.ports[1].id
 }

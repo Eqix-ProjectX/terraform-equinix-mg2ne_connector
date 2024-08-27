@@ -17,6 +17,8 @@ In the **terraform.tfvars** in the root module you may want to specify below as 
 - `range_desc` description of IP range
 - `cidr` cidr of IP ranges you reserve
 - `network_range` IP range itself
+- `connection_name` connection name
+- `email` your email
 
 
 It acts nothing more than above at the time writing the code today.   There will be more to come.
@@ -33,6 +35,8 @@ vlan_desc="sample"
 range_desc="sample"
 cidr=29
 network_range="192.168.0.0"
+connection_name="your connection name"
+email="your email"
 ```  
 
 
