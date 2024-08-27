@@ -37,3 +37,6 @@ output "port_pri" {
 output "port_sec" {
   value = equinix_metal_connection.mg2vd.ports[1].id
 }
+output "connection_token" {
+  value = equinix_metal_connection.mg2vd.authorization_code
+}
