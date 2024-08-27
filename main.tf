@@ -61,4 +61,16 @@ resource "equinix_metal_gateway" "mygateway_sec" {
   ip_reservation_id = equinix_metal_reserved_ip_block.myrange_sec.id
 }
 
-
+resource "equinix_metal_connection" "mg2vd" {
+  name          = var.connection_name
+  project_id    = var.project_id
+  metro         = var.metro
+  redundancy    = "redundant"
+  type          = "shared"
+  contact_email = var.email
+  vrfs = [
+    equinix_metal_vrf.myvrf_pri.id,
+    equinix_metal_vrf.myvrf_sec.id
+  ]
+  service_token_type = "z_side"
+}
