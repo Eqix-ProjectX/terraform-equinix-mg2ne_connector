@@ -31,9 +31,3 @@ output "vlan_sec" {
 output "connection_name" {
   value = equinix_metal_connection.mg2vd.name
 }
-output "port_pri" {
-  value = equinix_metal_connection.mg2vd.ports[0].id
-}
-output "port_sec" {
-  value = equinix_metal_connection.mg2vd.ports[1].id
-}
