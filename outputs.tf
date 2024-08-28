@@ -28,6 +28,3 @@ output "vlan" {
 output "vlan_sec" {
   value = equinix_metal_vlan.myvlan_sec.vxlan
 }
-output "connection_name" {
-  value = equinix_metal_connection.mg2vd.name
-}
