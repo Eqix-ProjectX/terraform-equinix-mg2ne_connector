@@ -12,5 +12,5 @@ variable "vlan_desc_sec" {}
 variable "range_desc_pri" {}
 variable "range_desc_sec" {}
 variable "cidr" {}
-# variable "network_range_pri" {}
-# variable "network_range_sec" {}
+variable "network_range_pri" {}
+variable "network_range_sec" {}
