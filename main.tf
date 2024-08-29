@@ -36,7 +36,7 @@ resource "equinix_metal_reserved_ip_block" "myrange_pri" {
   type        = "vrf"
   vrf_id      = equinix_metal_vrf.myvrf_pri.id
   cidr        = var.cidr
-  # network     = var.network_range_pri
+  network     = var.network_range_pri
 }
 
 resource "equinix_metal_reserved_ip_block" "myrange_sec" {
@@ -46,7 +46,7 @@ resource "equinix_metal_reserved_ip_block" "myrange_sec" {
   type        = "vrf"
   vrf_id      = equinix_metal_vrf.myvrf_sec.id
   cidr        = var.cidr
-  # network     = var.network_range_sec
+  network     = var.network_range_sec
 }
 
 resource "equinix_metal_gateway" "mygateway_pri" {
