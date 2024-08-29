@@ -4,7 +4,7 @@ resource "equinix_metal_vrf" "myvrf_pri" {
   name        = var.vrf_name_pri
   metro       = var.metro
   local_asn   = var.vrf_asn
-  # ip_ranges   = var.vrf_ranges_pri
+  ip_ranges   = var.vrf_ranges_pri
   project_id  = var.project_id
 }
 
@@ -13,7 +13,7 @@ resource "equinix_metal_vrf" "myvrf_sec" {
   name        = var.vrf_name_sec
   metro       = var.metro
   local_asn   = var.vrf_asn
-  # ip_ranges   = var.vrf_ranges_sec
+  ip_ranges   = var.vrf_ranges_sec
   project_id  = var.project_id
 }
 
