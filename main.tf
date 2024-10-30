@@ -6,6 +6,11 @@ resource "equinix_metal_vrf" "myvrf_pri" {
   local_asn   = var.vrf_asn
   ip_ranges   = cidrsubnets(format("%s%s", var.network_range_pri, "/24"), 1, 1)
   project_id  = var.project_id
+  lifecycle {
+    ignore_changes = [
+      metro
+    ]
+  }
 }
 
 resource "equinix_metal_vrf" "myvrf_sec" {
@@ -15,6 +20,11 @@ resource "equinix_metal_vrf" "myvrf_sec" {
   local_asn   = var.vrf_asn
   ip_ranges   = cidrsubnets(format("%s%s", var.network_range_sec, "/24"), 1, 1)
   project_id  = var.project_id
+  lifecycle {
+    ignore_changes = [
+      metro
+    ]
+  }
 }
 
 resource "equinix_metal_vlan" "myvlan_pri" {
